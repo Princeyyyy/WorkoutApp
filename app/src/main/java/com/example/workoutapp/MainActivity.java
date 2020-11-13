@@ -2,6 +2,7 @@ package com.example.workoutapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @BindView(R.id.startWorkoutButton) Button startWorkoutButton;
+    @BindView(R.id.startWorkoutButton) Button mstartWorkoutButton;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
     @Override
@@ -21,11 +22,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        startWorkoutButton.setOnClickListener(this);
+        mstartWorkoutButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        if(v == mstartWorkoutButton) {
+            Intent intent = new Intent(MainActivity.this, WorkoutActivity.class);
+            startActivity(intent);
+        }
 
     }
 }
