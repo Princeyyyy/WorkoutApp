@@ -22,7 +22,7 @@
         android:text="Progress is Progress No Matter How Small."
         android:textAlignment="center"
         android:textColor="@color/colorTextIcons"
-        android:textSize="35sp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
     <Button
