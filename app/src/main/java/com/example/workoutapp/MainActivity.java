@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @BindView(R.id.startWorkoutButton) Button mstartWorkoutButton;
+    @BindView(R.id.startWorkoutButton) Button mStartWorkoutButton;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
 
     @Override
@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mstartWorkoutButton.setOnClickListener(this);
+        mStartWorkoutButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v == mstartWorkoutButton) {
+        if(v == mStartWorkoutButton) {
             Intent intent = new Intent(MainActivity.this, WorkoutActivity.class);
             startActivity(intent);
         }
