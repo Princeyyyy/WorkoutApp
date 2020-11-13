@@ -15,13 +15,14 @@
         android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Progress is Progress No Matter How Small."
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="95dp"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="@font/allerta_stencil"
+        android:text="Progress is Progress No Matter How Small."
         android:textAlignment="center"
         android:textColor="@color/colorTextIcons"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <Button
