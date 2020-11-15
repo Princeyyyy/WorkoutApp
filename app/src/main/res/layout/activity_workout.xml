@@ -98,41 +98,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intropage" />
 
-    <RadioButton
-        android:id="@+id/beginnerRadioButton"
-        android:layout_width="186dp"
-        android:layout_height="84dp"
-        android:background="@color/teal_700"
-        android:text="Beginner\n 5 - 10 min a Day"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="247dp" />
+    <LinearLayout
+        android:id="@+id/fitone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subintropage"
 
-    <RadioButton
-        android:id="@+id/intermediateRadioButton"
-        android:layout_width="186dp"
-        android:layout_height="84dp"
-        android:background="@color/teal_700"
-        android:text="Intermediate\n 10 - 15 min a Day"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="370dp" />
 
-    <RadioButton
-        android:id="@+id/advancedRadioButton"
-        android:layout_width="186dp"
-        android:layout_height="84dp"
-        android:background="@color/teal_700"
-        android:text="Advanced\n 15 - 30 min a Day"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        tools:layout_editor_absoluteY="483dp" />
+        ></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
