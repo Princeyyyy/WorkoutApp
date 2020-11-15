@@ -10,7 +10,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 
 public class WorkoutActivity extends AppCompatActivity {
-    @BindView(R.id.continueWorkoutButton) Button mcontinueWorkoutButton;
+    @BindView(R.id.nextButton) Button mnextButton;
     @BindView(R.id.titlepage) TextView mtitlepage;
     @BindView(R.id.subtitlepage) TextView msubtitlepage;
     @BindView(R.id.intropage) TextView mintropage;
