@@ -95,7 +95,7 @@
         android:lineSpacingExtra="8dp"
         android:text="Lose Weight Or Grow Muscle with the plan that suits you Best:"
         android:textColor="@color/white"
-        android:textSize="11sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intropage" />
 
@@ -111,8 +111,97 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subintropage">
 
+        <LinearLayout
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/beginnerRadioButton"
+                android:layout_width="186dp"
+                android:layout_height="84dp"
+                android:text="Beginner\n 5 - 10 Min a Day"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fittwo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitone">
+
+        <LinearLayout
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/intermediateRadioButton"
+                android:layout_width="186dp"
+                android:layout_height="84dp"
+                android:text="Intermediate\n 10 - 15 Min a Day"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toEndOf="parent"
+                tools:layout_editor_absoluteY="370dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fitthree"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fittwo">
+
+        <LinearLayout
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/advancedRadioButton"
+                android:layout_width="186dp"
+                android:layout_height="84dp"
+                android:text="Advanced\n 15 - 30 Min a Day"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.514"
+                app:layout_constraintStart_toEndOf="parent"
+                tools:layout_editor_absoluteY="483dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
