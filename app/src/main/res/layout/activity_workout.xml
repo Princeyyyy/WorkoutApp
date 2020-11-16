@@ -16,19 +16,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-92dp" />
 
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorAccent"
-        android:text="Next"
-        android:textColor="@color/colorTextIcons"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/titlepage"
         android:layout_width="wrap_content"
@@ -107,7 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subintropage">
@@ -119,90 +106,102 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/beginnerRadioButton"
-                android:layout_width="186dp"
-                android:layout_height="84dp"
-                android:text="Beginner\n 5 - 10 Min a Day"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintStart_toEndOf="parent" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/absButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Abs"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/armsButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Arms"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.51"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="370dp" />
+
+                <RadioButton
+                    android:id="@+id/backButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Back"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/calvesButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Calves"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/chestButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Chest"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/legsButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Legs"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/shouldersButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Shoulders"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+            </RadioGroup>
 
         </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/fittwo"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fitone">
-
-        <LinearLayout
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/intermediateRadioButton"
-                android:layout_width="186dp"
-                android:layout_height="84dp"
-                android:text="Intermediate\n 10 - 15 Min a Day"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.51"
-                app:layout_constraintStart_toEndOf="parent"
-                tools:layout_editor_absoluteY="370dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/fitthree"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fittwo">
-
-        <LinearLayout
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/advancedRadioButton"
-                android:layout_width="186dp"
-                android:layout_height="84dp"
-                android:text="Advanced\n 15 - 30 Min a Day"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.514"
-                app:layout_constraintStart_toEndOf="parent"
-                tools:layout_editor_absoluteY="483dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
