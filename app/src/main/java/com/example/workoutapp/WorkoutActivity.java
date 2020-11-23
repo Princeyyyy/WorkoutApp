@@ -2,6 +2,7 @@ package com.example.workoutapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,8 +37,13 @@ public class WorkoutActivity extends AppCompatActivity {
         mabsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WorkoutActivity.this, "You have selected " + mabsButton.getText(), Toast.LENGTH_LONG).show();
+                if(v == mabsButton) {
+                    Toast.makeText(WorkoutActivity.this, "You have selected " + mabsButton.getText(), Toast.LENGTH_SHORT).show();
+                }
+                Intent intent = new Intent(WorkoutActivity.this, AbsWorkoutActivity.class);
+                startActivity(intent);
             }
+
         });
 
         //Arms Toast//
@@ -45,9 +51,14 @@ public class WorkoutActivity extends AppCompatActivity {
         marmsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WorkoutActivity.this, "You have selected " + marmsButton.getText(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                if(v == marmsButton) {
+                    Toast.makeText(WorkoutActivity.this, "You have selected " + marmsButton.getText(), Toast.LENGTH_SHORT).show();
+                }
+                    Intent intent = new Intent(WorkoutActivity.this, AbsWorkoutActivity.class);
+                    startActivity(intent);
+                }
+
+            });
 
         //Back Toast//
         mbackButton = (RadioButton) findViewById(R.id.backButton);
