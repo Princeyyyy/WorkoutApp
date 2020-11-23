@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 public interface WgerApi {
 
     @GET("exerciseinfo")
-    Call<Workout> getWorkouts(
+    Call<List<Workout>> getWorkouts(
             @Query("category") int category
     );
 

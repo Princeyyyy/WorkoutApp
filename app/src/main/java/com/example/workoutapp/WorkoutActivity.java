@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class WorkoutActivity extends AppCompatActivity {
     @BindView(R.id.titlepage) TextView mtitlepage;
@@ -31,6 +32,7 @@ public class WorkoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
+        ButterKnife.bind(this);
 
         //Abs Toast//
         mabsButton = (RadioButton) findViewById(R.id.absButton);
