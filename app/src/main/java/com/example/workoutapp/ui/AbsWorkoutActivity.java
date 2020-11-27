@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.workoutapp.R;
@@ -31,6 +32,7 @@ public class AbsWorkoutActivity extends AppCompatActivity {
 
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @BindView(R.id.RecyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
     private RecyclerViewAdapter mAdapter;
     public ArrayList<Result> results;
 
@@ -47,6 +49,7 @@ public class AbsWorkoutActivity extends AppCompatActivity {
         call.enqueue(new Callback<Workout>() {
             @Override
             public void onResponse(Call<Workout> call, Response<Workout> response) {
+                hideProgressBar();
                 Log.d(TAG, "onResponse: Server Response" + response.toString());
 
 //                ArrayList<Result> resultsList = response.body().getResults();
@@ -77,6 +80,8 @@ public class AbsWorkoutActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Workout> call, Throwable t) {
                 Log.e(TAG, "onFailure: Something went wrong" + t.getMessage());
+                hideProgressBar();
+                showFailureMessage();
             }
         });
 
@@ -87,9 +92,18 @@ public class AbsWorkoutActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
+    private void showFailureMessage() {
+        mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
     private void showRestaurants() {
 //        mListView.setVisibility(View.VISIBLE);
 //        mLocationTextView.setVisibility(View.VISIBLE);
         mRecyclerView.setVisibility(View.VISIBLE);
+    }
+
+    private void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
     }
 }
