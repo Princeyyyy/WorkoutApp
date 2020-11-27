@@ -1,18 +1,27 @@
 package com.example.workoutapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import com.example.workoutapp.R;
+import com.example.workoutapp.adapters.RecyclerViewAdapter;
 import com.example.workoutapp.models.Workout;
 import com.example.workoutapp.network.WgerApi;
 import com.example.workoutapp.network.WgerClient;
 import com.example.workoutapp.results.Result;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,11 +29,17 @@ import retrofit2.Response;
 public class AbsWorkoutActivity extends AppCompatActivity {
     public static final String TAG = AbsWorkoutActivity.class.getSimpleName();
 
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.RecyclerView) RecyclerView mRecyclerView;
+    private RecyclerViewAdapter mAdapter;
+    public ArrayList<Result> results;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_list);
+        ButterKnife.bind(this);
 
         WgerApi client = WgerClient.getClient();
         Call<Workout> call = client.getWorkouts(10);
@@ -34,20 +49,47 @@ public class AbsWorkoutActivity extends AppCompatActivity {
             public void onResponse(Call<Workout> call, Response<Workout> response) {
                 Log.d(TAG, "onResponse: Server Response" + response.toString());
 
-                ArrayList<Result> resultsList = response.body().getResults();
-                for (int i = 0; i < resultsList.size(); i++) {
-                    Log.d(TAG, "onResponse: \n" +
-                            "Name: " + resultsList.get(i).getName() + "\n" +
-                            "Description: " + resultsList.get(i).getDescription());
+//                ArrayList<Result> resultsList = response.body().getResults();
+//                for (int i = 0; i < resultsList.size(); i++) {
+//                    Log.d(TAG, "onResponse: \n" +
+//                            "Name: " + resultsList.get(i).getName() + "\n" +
+//                            "Description: " + resultsList.get(i).getDescription());
+//
+//                }
 
+                if(response.isSuccessful()){
+                    results = response.body().getResults();
+                    mAdapter = new RecyclerViewAdapter(AbsWorkoutActivity.this, results);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(AbsWorkoutActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
+
+                    showRestaurants();
+
+                }else{
+                    IOException e = new IOException();
+                    showUnsuccessfulMessage();
+                    e.printStackTrace();
                 }
             }
 
             @Override
             public void onFailure(Call<Workout> call, Throwable t) {
-                Log.e(TAG, "onFailure: Something went wrong"+ t.getMessage() );
+                Log.e(TAG, "onFailure: Something went wrong" + t.getMessage());
             }
         });
 
+    }
+
+    private void showUnsuccessfulMessage() {
+        mErrorTextView.setText("Something went wrong. Please try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void showRestaurants() {
+//        mListView.setVisibility(View.VISIBLE);
+//        mLocationTextView.setVisibility(View.VISIBLE);
+        mRecyclerView.setVisibility(View.VISIBLE);
     }
 }
