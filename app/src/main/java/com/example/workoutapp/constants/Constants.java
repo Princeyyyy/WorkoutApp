@@ -1,4 +1,4 @@
-package com.example.workoutapp;
+package com.example.workoutapp.constants;
 
 import com.example.workoutapp.BuildConfig;
 

@@ -1,4 +1,4 @@
-package com.example.workoutapp;
+package com.example.workoutapp.network;
 
 import com.example.workoutapp.models.Workout;
 

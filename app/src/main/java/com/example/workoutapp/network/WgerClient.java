@@ -1,4 +1,6 @@
-package com.example.workoutapp;
+package com.example.workoutapp.network;
+
+import com.example.workoutapp.network.WgerApi;
 
 import java.io.IOException;
 
@@ -9,8 +11,8 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.workoutapp.Constants.WGER_API_KEY;
-import static com.example.workoutapp.Constants.WGER_BASE_URL;
+import static com.example.workoutapp.constants.Constants.WGER_API_KEY;
+import static com.example.workoutapp.constants.Constants.WGER_BASE_URL;
 
 public class WgerClient {
 

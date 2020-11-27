@@ -1,31 +1,24 @@
-package com.example.workoutapp;
+package com.example.workoutapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
+import com.example.workoutapp.R;
 import com.example.workoutapp.models.Workout;
+import com.example.workoutapp.network.WgerApi;
+import com.example.workoutapp.network.WgerClient;
 import com.example.workoutapp.results.Result;
-import com.google.gson.JsonArray;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AbsWorkoutActivity extends AppCompatActivity {
     public static final String TAG = AbsWorkoutActivity.class.getSimpleName();
-    RecyclerView rvMain;
 
 
     @Override
@@ -44,8 +37,8 @@ public class AbsWorkoutActivity extends AppCompatActivity {
                 ArrayList<Result> resultsList = response.body().getResults();
                 for (int i = 0; i < resultsList.size(); i++) {
                     Log.d(TAG, "onResponse: \n" +
-                            "kind: " + resultsList.get(i).getName() +
-                            "kind: " + resultsList.get(i).getDescription());
+                            "Name: " + resultsList.get(i).getName() + "\n" +
+                            "Description: " + resultsList.get(i).getDescription());
 
                 }
             }

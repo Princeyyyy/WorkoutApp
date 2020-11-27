@@ -1,9 +1,10 @@
 package com.example.workoutapp;
 
-import android.app.Activity;
 import android.view.View;
 
 import androidx.test.rule.ActivityTestRule;
+
+import com.example.workoutapp.ui.MainActivity;
 
 import org.junit.After;
 import org.junit.Before;
