@@ -15,18 +15,30 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WorkoutActivity extends AppCompatActivity {
-    @BindView(R.id.titlepage) TextView mtitlepage;
-    @BindView(R.id.subtitlepage) TextView msubtitlepage;
-    @BindView(R.id.intropage) TextView mintropage;
-    @BindView(R.id.subintropage) TextView msubintropage;
-    @BindView(R.id.divpage) View mdivpage;
-    @BindView(R.id.absButton) RadioButton mabsButton;
-    @BindView(R.id.armsButton) RadioButton marmsButton;
-    @BindView(R.id.backButton) RadioButton mbackButton;
-    @BindView(R.id.calvesButton) RadioButton mcalvesButton;
-    @BindView(R.id.chestButton) RadioButton mchestButton;
-    @BindView(R.id.legsButton) RadioButton mlegsButton;
-    @BindView(R.id.shouldersButton) RadioButton mshouldersButton;
+    @BindView(R.id.titlepage)
+    TextView mtitlepage;
+    @BindView(R.id.subtitlepage)
+    TextView msubtitlepage;
+    @BindView(R.id.intropage)
+    TextView mintropage;
+    @BindView(R.id.subintropage)
+    TextView msubintropage;
+    @BindView(R.id.divpage)
+    View mdivpage;
+    @BindView(R.id.absButton)
+    RadioButton mabsButton;
+    @BindView(R.id.armsButton)
+    RadioButton marmsButton;
+    @BindView(R.id.backButton)
+    RadioButton mbackButton;
+    @BindView(R.id.calvesButton)
+    RadioButton mcalvesButton;
+    @BindView(R.id.chestButton)
+    RadioButton mchestButton;
+    @BindView(R.id.legsButton)
+    RadioButton mlegsButton;
+    @BindView(R.id.shouldersButton)
+    RadioButton mshouldersButton;
 
 
     @Override
@@ -40,7 +52,7 @@ public class WorkoutActivity extends AppCompatActivity {
         mabsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v == mabsButton) {
+                if (v == mabsButton) {
                     Toast.makeText(WorkoutActivity.this, "You have selected " + mabsButton.getText(), Toast.LENGTH_SHORT).show();
                 }
                 Intent intent = new Intent(WorkoutActivity.this, AbsWorkoutActivity.class);
@@ -54,21 +66,25 @@ public class WorkoutActivity extends AppCompatActivity {
         marmsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v == marmsButton) {
+                if (v == marmsButton) {
                     Toast.makeText(WorkoutActivity.this, "You have selected " + marmsButton.getText(), Toast.LENGTH_SHORT).show();
                 }
-                    Intent intent = new Intent(WorkoutActivity.this, ArmsWorkoutActivity.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(WorkoutActivity.this, ArmsWorkoutActivity.class);
+                startActivity(intent);
+            }
 
-            });
+        });
 
         //Back Toast//
         mbackButton = (RadioButton) findViewById(R.id.backButton);
         mbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WorkoutActivity.this, "You have selected " + mbackButton.getText(), Toast.LENGTH_SHORT).show();
+                if (v == marmsButton) {
+                    Toast.makeText(WorkoutActivity.this, "You have selected " + mbackButton.getText(), Toast.LENGTH_SHORT).show();
+                }
+                Intent intent = new Intent(WorkoutActivity.this, BackWorkoutActivity.class);
+                startActivity(intent);
             }
         });
 
