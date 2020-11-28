@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutApp">
-        <activity android:name=".ui.AbsWorkoutActivity"></activity>
-        <activity android:name=".ui.WorkoutActivity"></activity>
+        <activity android:name=".ui.ArmsWorkoutActivity"></activity>
+        <activity android:name=".ui.AbsWorkoutActivity" />
+        <activity android:name=".ui.WorkoutActivity" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

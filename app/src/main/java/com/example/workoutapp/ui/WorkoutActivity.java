@@ -57,7 +57,7 @@ public class WorkoutActivity extends AppCompatActivity {
                 if(v == marmsButton) {
                     Toast.makeText(WorkoutActivity.this, "You have selected " + marmsButton.getText(), Toast.LENGTH_SHORT).show();
                 }
-                    Intent intent = new Intent(WorkoutActivity.this, AbsWorkoutActivity.class);
+                    Intent intent = new Intent(WorkoutActivity.this, ArmsWorkoutActivity.class);
                     startActivity(intent);
                 }
 
