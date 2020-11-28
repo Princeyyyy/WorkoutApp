@@ -93,7 +93,11 @@ public class WorkoutActivity extends AppCompatActivity {
         mcalvesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WorkoutActivity.this, "You have selected " + mcalvesButton.getText(), Toast.LENGTH_SHORT).show();
+                if (v == marmsButton) {
+                    Toast.makeText(WorkoutActivity.this, "You have selected " + mcalvesButton.getText(), Toast.LENGTH_SHORT).show();
+                }
+                Intent intent = new Intent(WorkoutActivity.this, CalvesWorkoutActivity.class);
+                startActivity(intent);
             }
         });
 
