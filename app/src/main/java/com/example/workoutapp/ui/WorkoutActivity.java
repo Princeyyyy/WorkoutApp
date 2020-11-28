@@ -132,7 +132,11 @@ public class WorkoutActivity extends AppCompatActivity {
         mshouldersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WorkoutActivity.this, "You have selected " + mshouldersButton.getText(), Toast.LENGTH_SHORT).show();
+                if (v == mshouldersButton) {
+                    Toast.makeText(WorkoutActivity.this, "You have selected " + mshouldersButton.getText(), Toast.LENGTH_SHORT).show();
+                }
+                Intent intent = new Intent(WorkoutActivity.this, ShouldersWorkoutActivity.class);
+                startActivity(intent);
             }
         });
     }
