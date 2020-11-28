@@ -80,7 +80,7 @@ public class WorkoutActivity extends AppCompatActivity {
         mbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == marmsButton) {
+                if (v == mbackButton) {
                     Toast.makeText(WorkoutActivity.this, "You have selected " + mbackButton.getText(), Toast.LENGTH_SHORT).show();
                 }
                 Intent intent = new Intent(WorkoutActivity.this, BackWorkoutActivity.class);
@@ -93,7 +93,7 @@ public class WorkoutActivity extends AppCompatActivity {
         mcalvesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v == marmsButton) {
+                if (v == mcalvesButton) {
                     Toast.makeText(WorkoutActivity.this, "You have selected " + mcalvesButton.getText(), Toast.LENGTH_SHORT).show();
                 }
                 Intent intent = new Intent(WorkoutActivity.this, CalvesWorkoutActivity.class);
@@ -106,7 +106,11 @@ public class WorkoutActivity extends AppCompatActivity {
         mchestButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(WorkoutActivity.this, "You have selected " + mchestButton.getText(), Toast.LENGTH_LONG).show();
+                if (v == mchestButton) {
+                    Toast.makeText(WorkoutActivity.this, "You have selected " + mchestButton.getText(), Toast.LENGTH_LONG).show();
+                }
+                Intent intent = new Intent(WorkoutActivity.this, ChestWorkoutActivity.class);
+                startActivity(intent);
             }
         });
 
