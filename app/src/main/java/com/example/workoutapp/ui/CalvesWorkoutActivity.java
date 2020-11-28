@@ -100,8 +100,6 @@ public class CalvesWorkoutActivity extends AppCompatActivity {
     }
 
     private void showRestaurants() {
-//        mListView.setVisibility(View.VISIBLE);
-//        mLocationTextView.setVisibility(View.VISIBLE);
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 
