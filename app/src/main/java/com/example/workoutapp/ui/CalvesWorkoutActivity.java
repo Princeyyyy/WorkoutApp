@@ -70,7 +70,7 @@ public class CalvesWorkoutActivity extends AppCompatActivity {
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setHasFixedSize(true);
 
-                    showRestaurants();
+                    showWorkouts();
 
                 }else{
                     IOException e = new IOException();
@@ -99,7 +99,7 @@ public class CalvesWorkoutActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showRestaurants() {
+    private void showWorkouts() {
         mRecyclerView.setVisibility(View.VISIBLE);
     }
 

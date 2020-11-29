@@ -29,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Start Your Workout"
+        android:textStyle="italic"
         android:id="@+id/startWorkoutButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
