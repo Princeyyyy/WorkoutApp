@@ -120,6 +120,7 @@
         android:background="@color/teal_700"/>
 
     <Button
+        android:id="@+id/to_login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Already have an Account? Log In"

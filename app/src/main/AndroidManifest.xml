@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutApp">
-        <activity android:name=".ui.SignUpActivity"></activity>
+        <activity android:name=".ui.SignUpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.ShouldersWorkoutActivity" />
         <activity android:name=".ui.LegsWorkoutActivity" />
         <activity android:name=".ui.ChestWorkoutActivity" />
@@ -21,11 +28,6 @@
         <activity android:name=".ui.AbsWorkoutActivity" />
         <activity android:name=".ui.WorkoutActivity" />
         <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

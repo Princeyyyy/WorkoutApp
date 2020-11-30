@@ -16,22 +16,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
-    @BindView(R.id.signup_screen) Button mSignUpScreenButton;
-    @BindView(R.id.logo_image) Button mLogoImage;
-    @BindView(R.id.logo_name) TextInputLayout mLogoName;
-    @BindView(R.id.slogan_name) TextInputLayout mSloganImage;
+    Button signUpScreen;
+//    @BindView(R.id.signup_screen) Button mSignUpScreenButton;
+    @BindView(R.id.logo_image) ImageView mLogoImage;
+    @BindView(R.id.logo_name) TextView mLogoName;
+    @BindView(R.id.slogan_name) TextView mSloganImage;
     @BindView(R.id.login_btn) Button mLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_in);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
 
-        mSignUpScreenButton.setOnClickListener(new View.OnClickListener(){
+        signUpScreen = findViewById(R.id.signup_screen);
+
+        signUpScreen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(v == mSignUpScreenButton) {
+                if(v == signUpScreen) {
                     Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                     startActivity(intent);
                 }
