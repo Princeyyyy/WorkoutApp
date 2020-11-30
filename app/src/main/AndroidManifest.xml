@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutApp">
-        <activity android:name=".ui.SignUp"></activity>
+        <activity android:name=".ui.SignUpActivity"></activity>
         <activity android:name=".ui.ShouldersWorkoutActivity" />
         <activity android:name=".ui.LegsWorkoutActivity" />
         <activity android:name=".ui.ChestWorkoutActivity" />

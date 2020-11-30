@@ -41,7 +41,7 @@
         android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
+            android:id="@+id/login_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="User Name"
@@ -58,7 +58,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:transitionName="password_trans"
@@ -83,6 +83,7 @@
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
     <Button
+        android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go"
@@ -91,6 +92,7 @@
         android:transitionName="login_signup_trans"/>
 
     <Button
+        android:id="@+id/signup_screen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"

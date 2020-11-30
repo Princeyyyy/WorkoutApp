@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SignUp"
+    tools:context=".ui.SignUpActivity"
     android:orientation="vertical"
     android:background="@color/white"
     android:padding="20dp">
@@ -113,6 +113,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/sign_up_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go"
