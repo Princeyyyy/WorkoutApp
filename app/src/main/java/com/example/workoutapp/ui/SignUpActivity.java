@@ -61,7 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, WorkoutActivity.class);
                 startActivity(intent);
                 Toast.makeText(SignUpActivity.this, "Your Account has Been Created" , Toast.LENGTH_SHORT).show();
 
