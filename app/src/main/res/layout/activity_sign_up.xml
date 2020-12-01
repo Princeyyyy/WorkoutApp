@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="5dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
@@ -110,24 +110,22 @@
                 android:inputType="textPassword"/>
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:background="@color/teal_700"/>
+
+        <Button
+            android:id="@+id/to_login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Already have an Account? Log In"
+            android:background="#00000000"
+            android:textColor="@color/black"
+            android:transitionName="login_signup_trans"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/sign_up_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Go"
-        android:background="@color/teal_700"/>
-
-    <Button
-        android:id="@+id/to_login_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Already have an Account? Log In"
-        android:background="#00000000"
-        android:textColor="@color/black"
-        android:transitionName="login_signup_trans"/>
-
-
 
 </LinearLayout>

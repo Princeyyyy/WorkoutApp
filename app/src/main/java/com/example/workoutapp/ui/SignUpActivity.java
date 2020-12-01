@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.workoutapp.R;
 import com.example.workoutapp.UserHelperClass;
@@ -41,6 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
         regEmail = findViewById(R.id.email);
         regNumber = findViewById(R.id.phoneNumber);
         regPassword = findViewById(R.id.password);
+        toLogin = findViewById(R.id.to_login_btn);
 
 
 
@@ -52,9 +54,25 @@ public class SignUpActivity extends AppCompatActivity {
 //            }
 //        });
 
+        toLogin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(v == toLogin) {
+                    Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
+
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(intent);
+                Toast.makeText(SignUpActivity.this, "Your Account has Been Created" , Toast.LENGTH_SHORT).show();
+
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("users");
 

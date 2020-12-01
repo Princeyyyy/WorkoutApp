@@ -86,7 +86,7 @@
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go"
+        android:text="Sign in"
         android:textColor="@color/white"
         android:background="@color/teal_700"
         android:transitionName="login_signup_trans"/>
