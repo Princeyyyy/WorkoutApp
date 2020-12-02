@@ -1,6 +1,13 @@
 # WorkoutApp
 
-This application is an 
+This application is created for Workout Enthusiasts who want to know what Workouts are best for certain areas of the body. All Workouts are provided to the user for free with their names and a small Description. Fell free to do them at your own time.Workouts are divided into the following categories:
+- Abs
+- Arms
+- Back
+- Calves
+- Chest
+- Legs
+- Shoulders
 
 ## Author
 
@@ -22,14 +29,14 @@ Github: [https://github.com/Princeyyyy/WorkoutApp.git](https://github.com/Prince
 
 ### Prerequisites
 
-You need the following installed on your machine
+You need the following installed on your machine:
 - Java
 - JDK - Java Development Kit
 - Gradle
 - An IDE - Android Studio
 
 
-To confirm run the following command on linux
+To confirm run the following command on linux:
 ```
 $ java --version       //java version
 $ gradle --version     //gradle version
@@ -38,14 +45,14 @@ $ gradle --version     //gradle version
 ## Installing
 
 After cloning to your local machine navigate to the folder you cloned into and open it with Android Studio.
-* Click the Run Button and Run it on your Emulator.
+* Click the ```Run``` Button and Run it on your Emulator.
 
 
 
 ## Built With
 
-* [Java](https://www.java.com/) - The language used
-* [Android Studio](https://developer.android.com/) - Intergated development
+* [Java](https://www.java.com/) - The language used.
+* [Android Studio](https://developer.android.com/) - Intergated development Tool.
 
 
 ## Contributing
