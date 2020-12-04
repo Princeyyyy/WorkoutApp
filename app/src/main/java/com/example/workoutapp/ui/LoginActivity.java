@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Button signUpScreen, login_btn;
     TextView logoText, sloganText;
     TextInputLayout username, password;
@@ -40,24 +41,32 @@ public class LoginActivity extends AppCompatActivity {
 
         signUpScreen = findViewById(R.id.signup_screen);
         login_btn = findViewById(R.id.login_btn);
-        logoText =  findViewById(R.id.logo_name);
+        logoText = findViewById(R.id.logo_name);
         sloganText = findViewById(R.id.slogan_name);
         username = findViewById(R.id.login_username);
         password = findViewById(R.id.login_password);
 
-        signUpScreen.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                if(v == signUpScreen) {
-                    Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-                    startActivity(intent);
-                }
+        signUpScreen.setOnClickListener(this);
+        login_btn.setOnClickListener(this);
 
-            }
-        });
+    }
+    @Override
+    public void onClick(View v) {
+        if (v == signUpScreen){
+            Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(intent);
+        }
+        if (v == login_btn){
+            Toast.makeText(LoginActivity.this, "Login Successful" , Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginActivity.this, WorkoutActivity.class);
+            startActivity(intent);
+        }
     }
 
-    private Boolean validateUserName() {
+
+
+
+    private boolean validateUserName() {
       String val = username.getEditText().getText().toString();
 
       if (val.isEmpty()){
@@ -70,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
       }
     }
 
-    private Boolean validatePassword(){
+    private boolean validatePassword(){
         String val = password.getEditText().getText().toString();
 
         if (val.isEmpty()){
@@ -143,5 +152,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 }

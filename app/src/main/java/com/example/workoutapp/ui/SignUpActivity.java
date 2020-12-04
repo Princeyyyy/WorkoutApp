@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -61,10 +62,6 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(SignUpActivity.this, WorkoutActivity.class);
-                startActivity(intent);
-                Toast.makeText(SignUpActivity.this, "Your Account has Been Created" , Toast.LENGTH_SHORT).show();
-
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("users");
 
@@ -77,6 +74,10 @@ public class SignUpActivity extends AppCompatActivity {
                 UserHelperClass helperClass = new UserHelperClass(name,username,email,number,password);
 
                 reference.child(number).setValue(helperClass);
+
+                Intent intent = new Intent(SignUpActivity.this, WorkoutActivity.class);
+                startActivity(intent);
+                Toast.makeText(SignUpActivity.this, "Your Account has Been Created" , Toast.LENGTH_SHORT).show();
             }
         });
         }
