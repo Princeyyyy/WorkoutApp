@@ -13,7 +13,7 @@
         android:layout_height="300dp"
         android:src="@drawable/body"
         android:layout_gravity="center"
-        android:layout_marginLeft="70dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="200dp"/>
 
     <TextView
