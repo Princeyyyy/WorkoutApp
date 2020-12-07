@@ -21,12 +21,6 @@ import butterknife.ButterKnife;
 public class SignUpActivity extends AppCompatActivity {
     Button signUp, toLogin;
     TextInputLayout regName, regUsername, regEmail, regNumber, regPassword;
-//    @BindView(R.id.sign_up_btn) Button mSignUpButton;
-//    @BindView(R.id.username) TextInputLayout mUserName;
-//    @BindView(R.id.password) TextInputLayout mPassword;
-//    @BindView(R.id.name) TextInputLayout mName;
-//    @BindView(R.id.email) TextInputLayout mEmail;
-//    @BindView(R.id.phoneNumber) TextInputLayout mPhoneNumber;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;

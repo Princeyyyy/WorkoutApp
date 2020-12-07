@@ -14,8 +14,7 @@ import butterknife.ButterKnife;
 
 public class DecisionActivity extends AppCompatActivity {
     Button mdecisionAccountButton, mdecisionWorkoutButton;
-//    @BindView(R.id.decisionAccountButton) Button mdecisionAccountButton;
-//    @BindView(R.id.decisionWorkoutButton) Button mdecisionWorkoutButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +22,7 @@ public class DecisionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_decision);
         ButterKnife.bind(this);
 
-//        mdecisionAccountButton.setOnClickListener(this);
-//        mdecisionWorkoutButton.setOnClickListener(this);
+
         mdecisionAccountButton = findViewById(R.id.decisionAccountButton);
         mdecisionWorkoutButton = findViewById(R.id.decisionWorkoutButton);
 

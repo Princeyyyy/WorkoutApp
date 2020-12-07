@@ -27,17 +27,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button signUpScreen, login_btn;
     TextView logoText, sloganText;
     TextInputLayout username, password;
-//    @BindView(R.id.signup_screen) Button mSignUpScreenButton;
-//    @BindView(R.id.logo_image) ImageView mLogoImage;
-//    @BindView(R.id.logo_name) TextView mLogoName;
-//    @BindView(R.id.slogan_name) TextView mSloganImage;
-//    @BindView(R.id.login_btn) Button mLoginButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_in);
-//        ButterKnife.bind(this);
 
         signUpScreen = findViewById(R.id.signup_screen);
         login_btn = findViewById(R.id.login_btn);
@@ -125,11 +120,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         username.setError(null);
                         username.setErrorEnabled(false);
-
-//                        String nameFromDB = dataSnapshot.child(userEnteredUsername).child("name").getValue(String.class);
-//                        String usernameFromDB = dataSnapshot.child(userEnteredUsername).child("username").getValue(String.class);
-//                        String phoneNoFromDB = dataSnapshot.child(userEnteredUsername).child("phoneNo").getValue(String.class);
-//                        String emailFromDB = dataSnapshot.child(userEnteredUsername).child("email").getValue(String.class);
 
                         Intent intent =  new Intent(getApplicationContext(), WorkoutActivity.class);
                         startActivity(intent);
