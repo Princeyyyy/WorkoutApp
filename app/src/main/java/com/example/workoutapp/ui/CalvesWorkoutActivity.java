@@ -62,7 +62,7 @@ public class CalvesWorkoutActivity extends AppCompatActivity {
 //
 //                }
 
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     results = response.body().getResults();
                     mAdapter = new RecyclerViewAdapter(CalvesWorkoutActivity.this, results);
                     mRecyclerView.setAdapter(mAdapter);
@@ -72,7 +72,7 @@ public class CalvesWorkoutActivity extends AppCompatActivity {
 
                     showWorkouts();
 
-                }else{
+                } else {
                     IOException e = new IOException();
                     showUnsuccessfulMessage();
                     e.printStackTrace();

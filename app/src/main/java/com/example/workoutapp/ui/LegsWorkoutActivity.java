@@ -62,7 +62,7 @@ public class LegsWorkoutActivity extends AppCompatActivity {
 //
 //                }
 
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     results = response.body().getResults();
                     mAdapter = new RecyclerViewAdapter(LegsWorkoutActivity.this, results);
                     mRecyclerView.setAdapter(mAdapter);
@@ -72,7 +72,7 @@ public class LegsWorkoutActivity extends AppCompatActivity {
 
                     showWorkouts();
 
-                }else{
+                } else {
                     IOException e = new IOException();
                     showUnsuccessfulMessage();
                     e.printStackTrace();

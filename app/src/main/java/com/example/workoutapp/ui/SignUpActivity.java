@@ -23,10 +23,14 @@ import butterknife.ButterKnife;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    @BindView(R.id.registrationEmail) EditText mregistrationEmail;
-    @BindView(R.id.registrationPassword) EditText mregistrationPassword;
-    @BindView(R.id.signupButton) Button msignupButton;
-    @BindView(R.id.loginScreen) Button mloginScreen;
+    @BindView(R.id.registrationEmail)
+    EditText mregistrationEmail;
+    @BindView(R.id.registrationPassword)
+    EditText mregistrationPassword;
+    @BindView(R.id.signupButton)
+    Button msignupButton;
+    @BindView(R.id.loginScreen)
+    Button mloginScreen;
 
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
@@ -58,24 +62,24 @@ public class SignUpActivity extends AppCompatActivity {
                     mregistrationEmail.setError("Email is Required");
                     return;
                 }
-                if (TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     mregistrationPassword.setError("Password Required");
-                }else{
+                } else {
                     loader.setMessage("Registration in Progress");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
-                    mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                                 loader.dismiss();
-                            }else {
+                            } else {
                                 String error = task.getException().toString();
-                                Toast.makeText(SignUpActivity.this, "Registration Failed " + error , Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Registration Failed " + error, Toast.LENGTH_SHORT).show();
                                 loader.dismiss();
                             }
                         }

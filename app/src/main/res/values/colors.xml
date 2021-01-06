@@ -10,4 +10,5 @@
     <color name="colorTextIcons">#FFFFFF</color>
     <color name="colorAccent">#009688</color>
     <color name="textColor">#887878</color>
+    <color name="register_bk_color">#11CFC5</color>
 </resources>

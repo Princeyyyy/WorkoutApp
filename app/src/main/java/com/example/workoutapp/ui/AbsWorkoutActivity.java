@@ -30,9 +30,12 @@ import retrofit2.Response;
 public class AbsWorkoutActivity extends AppCompatActivity {
     public static final String TAG = AbsWorkoutActivity.class.getSimpleName();
 
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
-    @BindView(R.id.RecyclerView) RecyclerView mRecyclerView;
-    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.errorTextView)
+    TextView mErrorTextView;
+    @BindView(R.id.RecyclerView)
+    RecyclerView mRecyclerView;
+    @BindView(R.id.progressBar)
+    ProgressBar mProgressBar;
     private RecyclerViewAdapter mAdapter;
     public ArrayList<Result> results;
 
@@ -60,7 +63,7 @@ public class AbsWorkoutActivity extends AppCompatActivity {
 //
 //                }
 
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     results = response.body().getResults();
                     mAdapter = new RecyclerViewAdapter(AbsWorkoutActivity.this, results);
                     mRecyclerView.setAdapter(mAdapter);
@@ -70,7 +73,7 @@ public class AbsWorkoutActivity extends AppCompatActivity {
 
                     showWorkouts();
 
-                }else{
+                } else {
                     IOException e = new IOException();
                     showUnsuccessfulMessage();
                     e.printStackTrace();

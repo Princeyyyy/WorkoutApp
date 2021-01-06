@@ -21,15 +21,17 @@ public class IntroActivity extends AppCompatActivity {
 
     private static final int SPLASH = 3300;
 
-    @BindView(R.id.image) ImageView mImage;
-    @BindView(R.id.text) TextView mText;
+    @BindView(R.id.image)
+    ImageView mImage;
+    @BindView(R.id.text)
+    TextView mText;
     Animation topAnim, bottomAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_intro);
         ButterKnife.bind(this);
 
@@ -46,6 +48,6 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },SPLASH);
+        }, SPLASH);
     }
 }
