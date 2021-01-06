@@ -40,6 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);
 
+        if(mAuth.getCurrentUser() != null){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+
         msignupScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
