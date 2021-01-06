@@ -20,7 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.DecisionActivity" />
         <activity android:name=".ui.ShouldersWorkoutActivity" />
         <activity android:name=".ui.LegsWorkoutActivity" />
         <activity android:name=".ui.ChestWorkoutActivity" />

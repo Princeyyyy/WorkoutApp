@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v == mStartWorkoutButton) {
-            Intent intent = new Intent(MainActivity.this, DecisionActivity.class);
+            Intent intent = new Intent(MainActivity.this, WorkoutActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
