@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorTextIcons">#FFFFFF</color>
     <color name="colorAccent">#009688</color>
+    <color name="textColor">#887878</color>
 </resources>
