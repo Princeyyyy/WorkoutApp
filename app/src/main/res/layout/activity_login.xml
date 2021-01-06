@@ -21,7 +21,7 @@
         android:fontFamily="@font/bungee"
         android:text="Hello There, Welcome Back"
         android:transitionName="logo_text"
-        android:textSize="40sp"
+        android:textSize="25sp"
         android:textColor="@color/black"
         android:layout_marginTop="-20dp"/>
 
