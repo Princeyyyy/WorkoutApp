@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkoutApp">
-        <activity android:name=".ui.SignUpActivity"></activity>
+        <activity android:name=".ui.SignUpActivity" />
         <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.IntroActivity">
+        <activity android:name=".ui.IntroActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
