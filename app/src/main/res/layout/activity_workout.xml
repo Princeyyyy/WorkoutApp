@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:contentDescription="gym"
+        android:scaleType="centerCrop"
+        android:src="@drawable/muscles"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-92dp" />
+
+    <TextView
+        android:id="@+id/titlepage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/concert_one"
+        android:lineSpacingExtra="8dp"
+        android:text="Top Exercises:"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtitlepage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="8dp"
+        android:text="Easy Workouts For Everyone"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titlepage" />
+
+    <View
+        android:id="@+id/divpage"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="26dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/subtitlepage" />
+
+    <TextView
+        android:id="@+id/intropage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/concert_one"
+        android:lineSpacingExtra="8dp"
+        android:text="Introduction:"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitlepage" />
+
+    <TextView
+        android:id="@+id/subintropage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="8dp"
+        android:text="Lose Weight Or Grow Muscle with the plan that suits you Best:"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intropage" />
+
+    <LinearLayout
+        android:id="@+id/fitone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subintropage">
+
+        <LinearLayout
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/absButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Abs"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/armsButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Arms"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.51"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="370dp" />
+
+                <RadioButton
+                    android:id="@+id/backButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Back"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/calvesButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Calves"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/chestButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Chest"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/legsButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Legs"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+                <RadioButton
+                    android:id="@+id/shouldersButton"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Shoulders"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.514"
+                    app:layout_constraintStart_toEndOf="parent"
+                    tools:layout_editor_absoluteY="483dp" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
