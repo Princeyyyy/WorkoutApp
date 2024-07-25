@@ -18,19 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class LoginActivity extends AppCompatActivity {
 
-    @BindView(R.id.loginEmail)
-    EditText mloginEmail;
-    @BindView(R.id.loginPassword)
-    EditText mloginPassword;
-    @BindView(R.id.loginButton)
-    Button mloginButton;
-    @BindView(R.id.signupScreen)
-    Button msignupScreen;
+    private EditText mloginEmail;
+    private EditText mloginPassword;
+    private Button mloginButton;
+    private Button msignupScreen;
 
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
@@ -39,7 +32,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+
+        mloginEmail = findViewById(R.id.loginEmail);
+        mloginPassword = findViewById(R.id.loginPassword);
+        mloginButton = findViewById(R.id.loginButton);
+        msignupScreen = findViewById(R.id.signupScreen);
 
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);
@@ -67,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                     mloginEmail.setError("Email is Required");
                 }
                 if (TextUtils.isEmpty(password)) {
-                    mloginPassword.setError("Password s Required");
+                    mloginPassword.setError("Password is Required");
                 } else {
                     loader.setMessage("LogIn in Progress");
                     loader.setCanceledOnTouchOutside(false);

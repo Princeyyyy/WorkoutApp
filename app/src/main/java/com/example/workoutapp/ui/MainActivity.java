@@ -4,15 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,18 +16,10 @@ import com.example.workoutapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @BindView(R.id.startWorkoutButton)
-    Button mStartWorkoutButton;
-    @BindView(R.id.appNameTextView)
-    TextView mAppNameTextView;
-
+    private Button mStartWorkoutButton;
+    private TextView mAppNameTextView;
     private Toolbar toolbar;
-
-
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
@@ -39,8 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
+        mStartWorkoutButton = findViewById(R.id.startWorkoutButton);
+        mAppNameTextView = findViewById(R.id.appNameTextView);
         toolbar = findViewById(R.id.homeToolbar);
 
         setSupportActionBar(toolbar);
@@ -57,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
-
     }
 
     @Override
@@ -66,16 +54,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onCreateOptionsMenu(menu);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.logOut:
-                mAuth.signOut();
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
+        if (item.getItemId() == R.id.logOut) {
+            mAuth.signOut();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

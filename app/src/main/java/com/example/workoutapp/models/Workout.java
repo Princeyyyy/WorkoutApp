@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Workout {
-
-
-
     @SerializedName("count")
     @Expose
     private int count;

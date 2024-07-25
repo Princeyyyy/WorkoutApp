@@ -18,19 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class SignUpActivity extends AppCompatActivity {
 
-    @BindView(R.id.registrationEmail)
-    EditText mregistrationEmail;
-    @BindView(R.id.registrationPassword)
-    EditText mregistrationPassword;
-    @BindView(R.id.signupButton)
-    Button msignupButton;
-    @BindView(R.id.loginScreen)
-    Button mloginScreen;
+    private EditText mregistrationEmail;
+    private EditText mregistrationPassword;
+    private Button msignupButton;
+    private Button mloginScreen;
 
     private FirebaseAuth mAuth;
     private ProgressDialog loader;
@@ -39,7 +32,12 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        ButterKnife.bind(this);
+
+        // Initialize views
+        mregistrationEmail = findViewById(R.id.registrationEmail);
+        mregistrationPassword = findViewById(R.id.registrationPassword);
+        msignupButton = findViewById(R.id.signupButton);
+        mloginScreen = findViewById(R.id.loginScreen);
 
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);
@@ -71,7 +69,6 @@ public class SignUpActivity extends AppCompatActivity {
                     mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-
                             if (task.isSuccessful()) {
                                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                 startActivity(intent);

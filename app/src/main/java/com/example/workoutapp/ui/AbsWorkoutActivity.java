@@ -19,10 +19,7 @@ import com.example.workoutapp.results.Result;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,21 +27,21 @@ import retrofit2.Response;
 public class AbsWorkoutActivity extends AppCompatActivity {
     public static final String TAG = AbsWorkoutActivity.class.getSimpleName();
 
-    @BindView(R.id.errorTextView)
-    TextView mErrorTextView;
-    @BindView(R.id.RecyclerView)
-    RecyclerView mRecyclerView;
-    @BindView(R.id.progressBar)
-    ProgressBar mProgressBar;
+    private TextView mErrorTextView;
+    private RecyclerView mRecyclerView;
+    private ProgressBar mProgressBar;
     private RecyclerViewAdapter mAdapter;
     public ArrayList<Result> results;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_list);
-        ButterKnife.bind(this);
+
+        // Initialize views
+        mErrorTextView = findViewById(R.id.errorTextView);
+        mRecyclerView = findViewById(R.id.RecyclerView);
+        mProgressBar = findViewById(R.id.progressBar);
 
         WgerApi client = WgerClient.getClient();
         Call<Workout> call = client.getWorkouts(10);
@@ -54,14 +51,6 @@ public class AbsWorkoutActivity extends AppCompatActivity {
             public void onResponse(Call<Workout> call, Response<Workout> response) {
                 hideProgressBar();
                 Log.d(TAG, "onResponse: Server Response" + response.toString());
-
-//                ArrayList<Result> resultsList = response.body().getResults();
-//                for (int i = 0; i < resultsList.size(); i++) {
-//                    Log.d(TAG, "onResponse: \n" +
-//                            "Name: " + resultsList.get(i).getName() + "\n" +
-//                            "Description: " + resultsList.get(i).getDescription());
-//
-//                }
 
                 if (response.isSuccessful()) {
                     results = response.body().getResults();
@@ -87,7 +76,6 @@ public class AbsWorkoutActivity extends AppCompatActivity {
                 showFailureMessage();
             }
         });
-
     }
 
     private void showUnsuccessfulMessage() {
